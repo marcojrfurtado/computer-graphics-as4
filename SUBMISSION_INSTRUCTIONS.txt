@@ -1,0 +1,3 @@
+For this assignment, you may only make modifications to the files in the "shaders" folder. DO NOT MODIFY FILES ANYWHERE ELSE.
+
+At the end of your assignment zip up and submit the "shaders" folder only! Nothing else.
