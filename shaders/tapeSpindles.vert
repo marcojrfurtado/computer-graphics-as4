@@ -3,7 +3,13 @@
 uniform float currentTime;
 
 void main() {                
-    gl_TexCoord[0] = gl_MultiTexCoord0;
+
+
+    vec4 aTex = gl_MultiTexCoord0;
+    aTex.x = gl_MultiTexCoord0.x*cos(currentTime) - gl_MultiTexCoord0.y*sin(currentTime);
+    aTex.y = gl_MultiTexCoord0.y*cos(currentTime) + gl_MultiTexCoord0.x*sin(currentTime);
+    
+    gl_TexCoord[0] = aTex ;
     
     gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 }

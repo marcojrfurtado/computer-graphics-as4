@@ -3,8 +3,8 @@
 //This is exactly what OpenGL would do if we weren't writing a shader
 uniform float currentTime;
 
-void main()
-{	
+void main() {
+	
     gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 
 }
