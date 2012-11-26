@@ -1,13 +1,18 @@
 //A brutally simple vertex shader that just mimics exactly what OpenGL's default
 //fixed pipeline does
 
-varying vec4 texCoord;
+varying vec2 rgbTexCoord;
 
 void main() {                
+    
+    // Scale used for the island terrain
+    float scale = 6.0;
 
-    vec4 texCoord = gl_MultiTexCoord0;
+    rgbTexCoord = gl_MultiTexCoord0.st;
 
-    gl_TexCoord[0] = texCoord ;
+    rgbTexCoord.st = rgbTexCoord * scale  ;
+    
+    gl_TexCoord[0] = gl_MultiTexCoord0  ;
 
     
     gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex ;
