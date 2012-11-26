@@ -1,11 +1,11 @@
 //A brutally simple vertex shader that just mimics exactly what OpenGL's default
 //fixed pipeline does
 
-varying vec3 normal, lightDir;
 
 void main() {                
     
 	vec4 diffuse, ambient;
+        vec3 normal, lightDir;
 	float NdotL;
 	
 	lightDir = normalize(vec3(gl_LightSource[0].position));
@@ -16,8 +16,6 @@ void main() {
 	diffuse = gl_LightSource[0].diffuse;
 	
 	gl_TexCoord[0] = gl_MultiTexCoord0;
-  //  	gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
-
 
 	gl_FrontColor =  NdotL * diffuse + ambient;
 	gl_Position = ftransform();

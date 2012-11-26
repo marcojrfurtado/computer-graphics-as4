@@ -1,7 +1,7 @@
 uniform sampler2D textureSample_0;
 uniform sampler2D textureSample_1;
 
-varying vec2 texCoord;
+varying vec4 texCoord;
 
 void main() {
 
