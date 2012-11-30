@@ -17,6 +17,6 @@ void main() {
 
 	result = mix(texel0,texel1_res,texel1_res.a);
 
-	gl_FragColor = result ;
+	gl_FragColor = gl_Color * result ;
     
 }
